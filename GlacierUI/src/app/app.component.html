@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+  <div>
+    <input id="ap_email" name="email" value="noumanshah@gmail.com" type="email" size="30" maxlength="128" tabindex="1" autocorrect="off" autocapitalize="off" [(ngModel)]="email" pInputText>
+    
+  </div>
+
+  <div>
+    <input  id="ap_password" name="password" type="password" maxlength="1024" size="20"  class="password" [(ngModel)]="password" pInputText>
+  </div>
+
+  <div>
+    <button name="password" pButton type="button" label="Click" icon="fa fa-check" (click)="onClick($event)" class="ui-button-info"></button>
+  </div>
+ 
+  <div>{{message}}</div>
+
+  <h1> {{ title }}</h1>
+  <nav>
+    <a routerLink="/dashboard" routerLinkActive="active"> Dashboard</a>
+    <a routerLink="/heroes" routerLinkActive="active"> Heroes</a>
+  </nav>
+  <router-outlet> </router-outlet>
+
+</body>
+</html>

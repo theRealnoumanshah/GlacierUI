@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+<body>
+  <h2>My Heroes</h2>
+  <ul class="glacierDetails">
+    <li *ngFor="let detail of glacierDetails">
+      <span class="badge">{{detail.id}}</span> {{detail.name}}
+      
+    </li>
+  </ul>
+
+  <!--<ul class="heroes">
+    <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+      <button class="delete"
+              (click)="delete(hero); $event.stopPropagation()">
+        x
+      </button>
+    </li>
+  </ul>
+  <div *ngIf="selectedHero">
+    <h2>
+      {{selectedHero.name | uppercase}} is my hero
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+  </div>
+  <div>
+    <label>Hero name:</label> <input #heroName />
+    <button (click)="add(heroName.value); heroName.value=''">
+      Add
+    </button>
+  </div>-->
+
+  <p-dataTable [value]="glacierDetails">
+    <p-column field="id" header="Id"></p-column>
+    <p-column field="name" header="Name"></p-column>
+  </p-dataTable>
+
+  <p-dataTable [value]="heroes">
+    <p-column field="id" header="Id"></p-column>
+    <p-column field="name" header="Name"></p-column>
+  </p-dataTable>
+
+  <p-dataGrid [value]="heroes" [paginator]="true" [rows]="20">
+    <p-header>
+      List of Heroes
+    </p-header>
+    <ng-template let-hero pTemplate="item">
+      <div style="padding:3px" class="ui-g-12 ui-md-3">
+        <p-panel [header]="hero.id" [style]="{'text-align':'center'}">         
+          <div class="hero-detail">{{hero.name}}</div>
+          <hr class="ui-widget-content" style="border-top:0">
+          <i class="fa fa-search" (click)="onSelect(hero)" style="cursor:pointer"></i>
+        </p-panel>
+      </div>
+    </ng-template>
+  </p-dataGrid>
+
+  <p-dialog header="Hero Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" width="225" (onAfterHide)="onDialogHide()">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedHero" style="font-size:16px;text-align:center;padding:20px">
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-4">Id: </div>
+        <div class="ui-grid-col-8">{{selectedHero.id}}</div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-4">Name: </div>
+        <div class="ui-grid-col-8">{{selectedHero.name}}</div>
+      </div>
+    </div>
+  </p-dialog>
+
+</body>
+</html>

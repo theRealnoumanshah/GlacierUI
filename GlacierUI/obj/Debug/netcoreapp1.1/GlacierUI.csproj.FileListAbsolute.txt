@@ -1,0 +1,8 @@
+C:\Users\nshah\Documents\Visual Studio 2017\Projects\GlacierUI\GlacierUI\bin\Debug\netcoreapp1.1\GlacierUI.deps.json
+C:\Users\nshah\Documents\Visual Studio 2017\Projects\GlacierUI\GlacierUI\bin\Debug\netcoreapp1.1\GlacierUI.runtimeconfig.json
+C:\Users\nshah\Documents\Visual Studio 2017\Projects\GlacierUI\GlacierUI\bin\Debug\netcoreapp1.1\GlacierUI.runtimeconfig.dev.json
+C:\Users\nshah\Documents\Visual Studio 2017\Projects\GlacierUI\GlacierUI\obj\Debug\netcoreapp1.1\GlacierUI.AssemblyInfo.cs
+C:\Users\nshah\Documents\Visual Studio 2017\Projects\GlacierUI\GlacierUI\bin\Debug\netcoreapp1.1\GlacierUI.dll
+C:\Users\nshah\Documents\Visual Studio 2017\Projects\GlacierUI\GlacierUI\bin\Debug\netcoreapp1.1\GlacierUI.pdb
+C:\Users\nshah\Documents\Visual Studio 2017\Projects\GlacierUI\GlacierUI\obj\Debug\netcoreapp1.1\GlacierUI.dll
+C:\Users\nshah\Documents\Visual Studio 2017\Projects\GlacierUI\GlacierUI\obj\Debug\netcoreapp1.1\GlacierUI.pdb

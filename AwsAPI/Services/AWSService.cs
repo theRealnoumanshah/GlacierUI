@@ -77,18 +77,18 @@ namespace AWS.API.Services
 
             HttpResponseMessage response = await client.GetAsync(_awsParams.CanonicalURI);
 
-            string result = await response.Content.ReadAsStreamAsync .ReadAsStringAsync();
+            string result = await response.Content.ReadAsStringAsync();
 
             JToken token = JToken.Parse(result);
-            JObject json = JObject.Parse((string)token);
+            return token.ToObject<T>();
 
             //JObject obj = JObject.Parse(result);
 
-            return json.ToObject<T>();
+            //return json.ToObject<T>();
 
-            //var obj2 = JsonConvert.DeserializeObject<T>(json);
+            //var obj = JsonConvert.DeserializeObject<T>(json.ToString());
 
-            //return obj2;
+            //return obj;
         }
 
         private string getCanonicalRequest(string hashedPayload)

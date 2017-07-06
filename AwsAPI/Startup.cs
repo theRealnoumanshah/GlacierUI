@@ -25,8 +25,11 @@ namespace AwsAPI
             //      service related params to service class (ie, GlacierService)
 
             AWSRequestParameters awsParams = new AWSRequestParameters();
-            awsParams.AccessKey = "AKIAJGTCNGBYORCFUEYA";
-            awsParams.SecretKey = "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";
+            //awsParams.AccessKey = "AKIAJGTCNGBYORCFUEYA";
+            //awsParams.SecretKey = "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";
+            awsParams.AccessKey = "AKIAJR2CHLUHR32Y2JJQ";
+            awsParams.SecretKey = "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";            
+
             awsParams.Region = "us-east-1";
             awsParams.Service = "glacier";
             awsParams.HTTPMethod = "GET";

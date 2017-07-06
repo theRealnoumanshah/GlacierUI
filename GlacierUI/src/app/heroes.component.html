@@ -37,9 +37,15 @@
     </button>
   </div>-->
 
-  <p-dataTable [value]="glacierDetails">
-    <p-column field="id" header="Id"></p-column>
-    <p-column field="name" header="Name"></p-column>
+
+
+  <p-dataTable [value]="glacierVaults">
+    <p-column field="CreationDate" header="CreationDate"></p-column>
+    <p-column field="LastInventoryDate" header="LastInventoryDate"></p-column>
+    <p-column field="NumberOfArchives" header="NumberOfArchives"></p-column>
+    <p-column field="SizeInBytes" header="SizeInBytes"></p-column>
+    <p-column field="VaultARN" header="VaultARN"></p-column>
+    <p-column field="VaultName" header="VaultName"></p-column>
   </p-dataTable>
 
   <p-dataTable [value]="heroes">

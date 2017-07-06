@@ -2,7 +2,7 @@
 import { Router } from '@angular/router';
 
 import { Hero } from './hero';
-import { GlacierDetail } from './glacierDetail';
+import { GlacierVault } from './glacierVault';
 import { HeroService } from './hero.service';
 import { GlacierService } from './glacier.service';
 
@@ -17,7 +17,7 @@ export class HeroesComponent implements OnInit {
 
     title = 'Tour of Heroes';    
     heroes: Hero[];
-    glacierDetails: GlacierDetail[];
+    glacierVault: GlacierVault;
     selectedHero: Hero;
     displayDialog: boolean;
 
@@ -42,7 +42,7 @@ export class HeroesComponent implements OnInit {
 
     getGlacierDetails(): void {
         
-        this.glacierService.getDetails().then(details => this.glacierDetails = details);
+        this.glacierService.getVaults().then(vaults => this.glacierVault = vaults);
     }
 
     onSelect(hero: Hero): void {

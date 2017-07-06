@@ -2,9 +2,9 @@
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import { GlacierDetail } from './glacierDetail';
+import { GlacierVault } from './glacierVault';
 ////import { HEROES } from './mock-heroes';
-import { GLACIERDETAILS } from './mock-glacierDetail';
+import { GLACIERVAULT } from './mock-glacierVault';
 
 @Injectable()
 export class GlacierService {
@@ -28,10 +28,10 @@ export class GlacierService {
     //    });
     //}
 
-    getDetails(): Promise<GlacierDetail[]> {
+    getVaults(): Promise<GlacierVault> {
         return this.http.get(this.glacierUrl)
             .toPromise()
-            .then(response => response.json() as GlacierDetail[])            //.then(this.extractData)
+            .then(response => response.json() as GlacierVault)            //.then(this.extractData)
             .catch(this.handleError);
     }
 

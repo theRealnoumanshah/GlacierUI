@@ -7,11 +7,11 @@ namespace AWS.API.Models
 {
     public class Vault
     {
-        string CreationDate { get; set; }
-        string LastInventoryDate { get; set; }
-        string NumberOfArchives { get; set; }
-        string SizeInBytes { get; set; }
-        string VaultARN { get; set; }
-        string VaultName { get; set; }
+        public DateTime? CreationDate { get; set; }
+        public DateTime? LastInventoryDate { get; set; }
+        public int? NumberOfArchives { get; set; }
+        public int? SizeInBytes { get; set; }
+        public string VaultARN { get; set; }
+        public string VaultName { get; set; }
     }
 }

@@ -1,9 +1,0 @@
-C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\InitAWS\bin\Debug\netcoreapp1.1\InitAWS.deps.json
-C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\InitAWS\bin\Debug\netcoreapp1.1\InitAWS.runtimeconfig.json
-C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\InitAWS\bin\Debug\netcoreapp1.1\InitAWS.runtimeconfig.dev.json
-C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\InitAWS\obj\Debug\netcoreapp1.1\InitAWS.csprojResolveAssemblyReference.cache
-C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\InitAWS\obj\Debug\netcoreapp1.1\InitAWS.AssemblyInfo.cs
-C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\InitAWS\bin\Debug\netcoreapp1.1\InitAWS.dll
-C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\InitAWS\bin\Debug\netcoreapp1.1\InitAWS.pdb
-C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\InitAWS\obj\Debug\netcoreapp1.1\InitAWS.dll
-C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\InitAWS\obj\Debug\netcoreapp1.1\InitAWS.pdb

@@ -10,11 +10,22 @@ using Microsoft.Extensions.Logging;
 using AWS.API.Interfaces;
 using AWS.API.Services;
 using AWS.API.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace AwsAPI
 {
     public class Startup
     {
+        public Startup(IHostingEnvironment env)
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddUserSecrets<Startup>();
+            Configuration = builder.Build();
+        }
+
+        public IConfigurationRoot Configuration { get; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -25,10 +36,9 @@ namespace AwsAPI
             //      service related params to service class (ie, GlacierService)
 
             AWSRequestParameters awsParams = new AWSRequestParameters();
-            //awsParams.AccessKey = "AKIAJGTCNGBYORCFUEYA";
-            //awsParams.SecretKey = "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";
-            awsParams.AccessKey = "AKIAJR2CHLUHR32Y2JJQ";
-            awsParams.SecretKey = "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";            
+            
+            awsParams.AccessKey = Configuration["AccessKey"]; ;
+            awsParams.SecretKey = Configuration["SecretKey"]; ;            
 
             awsParams.Region = "us-east-1";
             awsParams.Service = "glacier";

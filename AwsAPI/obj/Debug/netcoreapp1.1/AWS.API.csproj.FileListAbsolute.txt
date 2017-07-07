@@ -7,3 +7,4 @@ c:\users\nshah\documents\visual studio 2017\Projects\GlacierUI\AwsAPI\obj\Debug\
 C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\AwsAPI\bin\Debug\netcoreapp1.1\AWS.API.pdb
 C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\AwsAPI\obj\Debug\netcoreapp1.1\AWS.API.dll
 C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\AwsAPI\obj\Debug\netcoreapp1.1\AWS.API.pdb
+C:\Users\nshah\documents\visual studio 2017\Projects\GlacierUI\AwsAPI\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs

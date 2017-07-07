@@ -27,6 +27,10 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+_ReSharper.*
+bin
+obj
+packages
 
 # Visual Studio 2015
 .vs/

@@ -5,8 +5,8 @@
   <title></title>
 </head>
 <body>
-  <h2>My Heroes</h2>
-  <ul class="glacierDetails">
+  <h2>My Vaults</h2>
+  <!--<ul class="glacierDetails">
     <li *ngFor="let vault of vaults">
       <span class="badge">Name</span>{{vault.VaultName}}
       <span class="badge">Create Date</span>{{vault.CreationDate}}
@@ -17,7 +17,7 @@
 
 
     </li>
-  </ul>
+  </ul>-->
 
   <!--<ul class="heroes">
     <li *ngFor="let hero of heroes"
@@ -43,15 +43,15 @@
     </button>
   </div>-->
 
-
-
-  <p-dataTable [value]="vaults">
-    <p-column field="creationDate" header="CreationDate"></p-column>
-    <p-column field="lastInventoryDate" header="LastInventoryDate"></p-column>
-    <p-column field="numberOfArchives" header="NumberOfArchives"></p-column>
-    <p-column field="SizeInBytes" header="SizeInBytes"></p-column>
-    <p-column field="vaultARN" header="VaultARN"></p-column>
-    <p-column field="vaultName" header="VaultName"></p-column>
+  <p-dataTable [value]="vaults" selectionMode="single" [(selection)]="selectedVault" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" dataKey="numberOfArchives">
+    <p-header>Single Selection</p-header>
+    <p-footer>Selected Vault: {{ selectedVault ? selectedVault.vaultName : 'none'}}</p-footer>
+    <p-column field="creationDate" header="Creation Date"></p-column>
+    <p-column field="lastInventoryDate" header="Last Inventory Date"></p-column>
+    <p-column field="numberOfArchives" header="Number Of Archives"></p-column>
+    <p-column field="sizeInBytes" header="Size In Bytes"></p-column>
+    <p-column field="vaultARN" header="Vault ARN"></p-column>
+    <p-column field="vaultName" header="Vault Name"></p-column>
   </p-dataTable>
 
   <!--<p-dataTable [value]="heroes">
@@ -59,7 +59,7 @@
     <p-column field="name" header="Name"></p-column>
   </p-dataTable>-->
 
-  <p-dataGrid [value]="vaults" [paginator]="true" [rows]="20">
+  <!--<p-dataGrid [value]="vaults" [paginator]="true" [rows]="20">
     <p-header>
       List of Vaults
     </p-header>
@@ -86,7 +86,7 @@
         <div class="ui-grid-col-8">{{selectedVault.vaultName}}</div>
       </div>
     </div>
-  </p-dialog>
+  </p-dialog>-->
 
 </body>
 </html>

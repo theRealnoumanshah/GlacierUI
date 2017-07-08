@@ -3,5 +3,5 @@
 export class GlacierVault {
 
     marker: string;
-    listVaults: Vault[];
+    vaultList: Vault[];
 }

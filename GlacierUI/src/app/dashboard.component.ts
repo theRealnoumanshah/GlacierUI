@@ -1,24 +1,24 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Vault } from './vault';
+import { GlacierService } from './glacier.service';
 
 @Component({
 
     selector: 'my-dashboard',
     templateUrl: './dashboard.component.html',    
     styleUrls: [ './dashboard.component.css' ],
-    providers: [HeroService]
+    providers: [GlacierService]
 })
 
 export class DashboardComponent implements OnInit {
 
-    heroes: Hero[];
+    vaults: Vault[];
 
-    constructor(private heroService: HeroService) { }
+    constructor(private glacierService: GlacierService) { }
 
     ngOnInit(): void {
 
-        this.heroService.getHeroes()
-            .then(heroes => this.heroes = heroes.slice(1,5));
+        this.glacierService.getVaults()
+            .then(vaultWrapper => this.vaults = vaultWrapper.vaultList.slice(1,5));
     }
 }

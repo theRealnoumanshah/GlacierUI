@@ -5,6 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import { GlacierVault } from './glacierVault';
 ////import { HEROES } from './mock-heroes';
 import { GLACIERVAULT } from './mock-glacierVault';
+import { Vault } from './vault';
 
 @Injectable()
 export class GlacierService {
@@ -28,12 +29,12 @@ export class GlacierService {
     //    });
     //}
 
-    getVaults(): Promise<GlacierVault> {
-        return this.http.get(this.glacierUrl)
-            .toPromise()
-            .then(response => response.json() as GlacierVault)            //.then(this.extractData)
-            .catch(this.handleError);
-    }
+    //getVaults(): Promise<GlacierVault> {
+    //    return this.http.get(this.glacierUrl)
+    //        .toPromise()
+    //        .then(response => response.json() as GlacierVault)            //.then(this.extractData)
+    //        .catch(this.handleError);
+    //}
 
     //private extractData(res: Response) {
     //    console.log(res.json());
@@ -42,11 +43,12 @@ export class GlacierService {
     //    return body.data || {};
     //}
 
-    //getDetails(): Promise<GlacierDetail[]> {
+    getVaults(): Promise<GlacierVault> {
 
-    //    return Promise.resolve(GLACIERDETAILS);
+        //console.log(GLACIERVAULT);
+        return Promise.resolve(GLACIERVAULT);
 
-    //} 
+    } 
     
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
@@ -63,6 +65,20 @@ export class GlacierService {
     //    return this.getHeroes()
     //        .then(heroes => heroes.find(hero => hero.id === id));
     //}
+
+    getVault(arn: string): Promise<Vault> {
+        return this.getVaults()
+            .then(vaultWrapper => vaultWrapper.vaultList.find(vault => vault.vaultARN === arn));
+    }
+
+    update(vault: Vault): Promise<Vault> {
+        const url = `${this.glacierUrl}/${vault.vaultARN}`;
+        return this.http
+            .put(url, JSON.stringify(vault), { headers: this.headers })
+            .toPromise()
+            .then(() => vault)
+            .catch(this.handleError);
+    }
 
     //getHero(id: number): Promise<Hero> {
     //    const url = `${this.heroesUrl}/${id}`;

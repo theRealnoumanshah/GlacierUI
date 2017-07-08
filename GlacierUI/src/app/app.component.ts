@@ -9,7 +9,7 @@
 
 export class AppComponent {
 
-    title: 'Tour of Heroes';
+    title: 'Vault Details';
 
     name: string;
 

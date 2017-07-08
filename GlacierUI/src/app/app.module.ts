@@ -12,9 +12,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroService } from './hero.service';
+//import { HeroesComponent } from './heroes.component';
+//import { HeroDetailComponent } from './hero-detail.component';
+//import { HeroService } from './hero.service';
+import { VaultsComponent } from './vaults.component';
+import { VaultDetailComponent } from './vault-detail.component';
 import { GlacierService } from './glacier.service';
 import { HeroSearchComponent } from './hero-search.component';
 
@@ -25,6 +27,7 @@ import { DialogModule } from 'primeng/primeng';
 import { TabViewModule } from 'primeng/primeng';
 import { CodeHighlighterModule } from 'primeng/primeng';
 import { DataTableModule, SharedModule } from 'primeng/primeng';
+import { Message } from 'primeng/primeng'
 
 @NgModule({
     imports: [
@@ -42,17 +45,20 @@ import { DataTableModule, SharedModule } from 'primeng/primeng';
         CodeHighlighterModule,
         BrowserAnimationsModule,
         DataTableModule,
-        SharedModule
+        SharedModule        
         
     ],
     declarations: [
         AppComponent,
         DashboardComponent,
-        HeroDetailComponent,
-        HeroesComponent,
-        HeroSearchComponent,
+        //HeroDetailComponent,
+        //HeroesComponent,
+        //HeroSearchComponent,
+        VaultsComponent,
+        VaultDetailComponent
     ],
-    providers: [HeroService, GlacierService],
+    //providers: [HeroService, GlacierService],
+    providers: [GlacierService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

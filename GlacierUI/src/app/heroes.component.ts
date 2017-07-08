@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Hero } from './hero';
 import { GlacierVault } from './glacierVault';
+import { Vault } from './vault';
 import { HeroService } from './hero.service';
 import { GlacierService } from './glacier.service';
 
@@ -17,8 +18,10 @@ export class HeroesComponent implements OnInit {
 
     title = 'Tour of Heroes';    
     heroes: Hero[];
+    vaults: Vault[];
     glacierVault: GlacierVault;
     selectedHero: Hero;
+    selectedVault: Vault;
     displayDialog: boolean;
 
     constructor(
@@ -26,13 +29,17 @@ export class HeroesComponent implements OnInit {
         private heroService: HeroService,
         private glacierService: GlacierService) { }
 
+    //gotoDetail(): void {
+    //    this.router.navigate(['/detail', this.selectedHero.id]);
+    //}
+
     gotoDetail(): void {
-        this.router.navigate(['/detail', this.selectedHero.id]);
+        this.router.navigate(['/detail', this.selectedVault.vaultName]);
     }
 
     ngOnInit(): void {
         this.getHeroes();
-        this.getGlacierDetails();
+        this.getGlacierVaults();
     }
 
     getHeroes(): void {
@@ -40,13 +47,18 @@ export class HeroesComponent implements OnInit {
         this.heroService.getHeroes().then(heroes => this.heroes = heroes);        
     }
 
-    getGlacierDetails(): void {
+    getGlacierVaults(): void {
         
-        this.glacierService.getVaults().then(vaults => this.glacierVault = vaults);
+        this.glacierService.getVaults().then(vaultWrapper => this.vaults = vaultWrapper.vaultList);
     }
 
-    onSelect(hero: Hero): void {
-        this.selectedHero = hero;
+    //onSelect(hero: Hero): void {
+    //    this.selectedHero = hero;
+    //    this.displayDialog = true;
+    //}
+
+    onSelect(vault: Vault): void {
+        this.selectedVault = vault;
         this.displayDialog = true;
     }
 
